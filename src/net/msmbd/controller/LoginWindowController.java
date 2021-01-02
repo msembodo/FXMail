@@ -18,8 +18,7 @@ public class LoginWindowController extends BaseController {
         super(emailManager, viewFactory, fxmlName);
     }
 
-    @FXML
-    void handleLoginButton() {
+    @FXML void handleLoginButton() {
         viewFactory.showMainWindow();
         Stage stage = (Stage) lblError.getScene().getWindow();
         viewFactory.closeWindow(stage);

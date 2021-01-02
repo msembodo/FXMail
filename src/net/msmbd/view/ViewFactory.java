@@ -8,6 +8,7 @@ import net.msmbd.EmailManager;
 import net.msmbd.controller.BaseController;
 import net.msmbd.controller.LoginWindowController;
 import net.msmbd.controller.MainWindowController;
+import net.msmbd.controller.OptionsWindowController;
 
 import java.io.IOException;
 
@@ -26,6 +27,11 @@ public class ViewFactory {
 
     public void showMainWindow() {
         BaseController controller = new MainWindowController(emailManager, this, "MainWindow.fxml");
+        initializeStage(controller);
+    }
+
+    public void showOptionsWindow() {
+        BaseController controller = new OptionsWindowController(emailManager, this, "OptionsWindow.fxml");
         initializeStage(controller);
     }
 

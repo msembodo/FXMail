@@ -9,22 +9,18 @@ import net.msmbd.view.ViewFactory;
 
 public class MainWindowController extends BaseController {
 
-    @FXML
-    private TreeView<?> treeEmails;
+    @FXML private TreeView<?> treeEmails;
 
-    @FXML
-    private TableView<?> tblEmails;
+    @FXML private TableView<?> tblEmails;
 
-    @FXML
-    private WebView webEmail;
+    @FXML private WebView webEmail;
 
     public MainWindowController(EmailManager emailManager, ViewFactory viewFactory, String fxmlName) {
         super(emailManager, viewFactory, fxmlName);
     }
 
-    @FXML
-    void handleMenuOptions() {
-
+    @FXML void handleMenuOptions() {
+        viewFactory.showOptionsWindow();
     }
 
 }
