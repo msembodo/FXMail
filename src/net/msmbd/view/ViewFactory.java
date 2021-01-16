@@ -16,9 +16,19 @@ public class ViewFactory {
 
     private EmailManager emailManager;
 
-    public ViewFactory(EmailManager emailManager) {
-        this.emailManager = emailManager;
-    }
+    public ViewFactory(EmailManager emailManager) { this.emailManager = emailManager; }
+
+    // view options handling
+    private ColorTheme colorTheme = ColorTheme.DEFAULT;
+    private FontSize fontSize = FontSize.MEDIUM;
+
+    public ColorTheme getColorTheme() { return colorTheme; }
+
+    public void setColorTheme(ColorTheme colorTheme) { this.colorTheme = colorTheme; }
+
+    public FontSize getFontSize() { return fontSize; }
+
+    public void setFontSize(FontSize fontSize) { this.fontSize = fontSize; }
 
     public void showLoginWindow() {
         BaseController controller = new LoginWindowController(emailManager, this, "LoginWindow.fxml");
@@ -51,8 +61,6 @@ public class ViewFactory {
         stage.show();
     }
 
-    public void closeWindow(Stage stage) {
-        stage.close();
-    }
+    public void closeWindow(Stage stage) { stage.close(); }
 
 }
